@@ -10,6 +10,7 @@ import BackOffice from './components/User_management/BackOfficeUser';
 import TrainPage from './components/Train_Management/Train';
 import UpdateTrainPage from './components/Train_Management/UpdateTrain';
 import UpdateProfile from './components/User_management/UpdateProfile';
+import Home from './components/User_management/Home';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <Routes>
 
+      <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/backoffice' element={<BackOffice />}></Route>

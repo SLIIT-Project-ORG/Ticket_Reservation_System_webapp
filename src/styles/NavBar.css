@@ -1,0 +1,17 @@
+.navbar{
+
+    float: left;
+    background-color: #d8e8da
+   
+
+}
+.navbar > button:hover{
+    background-color: rgb(204, 223, 116);
+    
+}
+.navbar > button{
+    font-size: 18px;
+    font-style:normal;
+    background-color: #c1e7d5;
+    
+}
