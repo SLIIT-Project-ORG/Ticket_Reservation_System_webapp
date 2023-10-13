@@ -25,18 +25,18 @@ export default function BackOffice() {
             style={imageStyle}
           />
           <div className="col-12 mt-5 text-center">
-          <div className="mb-3">
-            <button type="button" class="btn btn-primary form-control" style={{ width: '400px', height: "50px",  marginLeft:'100px', marginBottom:"70px", marginTop:'50px'}}>
-              TRAVELER ACCOUNT MANAGEMENT
-            </button>
-          </div>
-          <div className="mb-3">
-            <button type="button" class="btn btn-danger form-control" style={{ width: '400px', height: "50px" ,marginLeft:'100px'}}>
-              TRAIN MANAGEMENT
-            </button>
-        </div>
+            <div className="mb-3">
+              <button type="button" class="btn btn-primary form-control" style={{ width: '400px', height: "50px", marginLeft: '100px', marginBottom: "70px", marginTop: '50px' }}>
+                TRAVELER ACCOUNT MANAGEMENT
+              </button>
+            </div>
+            <div className="mb-3">
+              <button type="button" class="btn btn-danger form-control" style={{ width: '400px', height: "50px", marginLeft: '100px' }}>
+                TRAIN MANAGEMENT
+              </button>
+            </div>
 
-        
+
           </div>
         </div>
       </div>

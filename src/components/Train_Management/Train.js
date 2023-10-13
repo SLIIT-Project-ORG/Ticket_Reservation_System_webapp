@@ -1,29 +1,28 @@
 import React from 'react';
 
 
-
 const backgroundStyle = {
     backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     minHeight: '100vh', // Ensures the background covers the entire viewport height
-  };
-  
-  const formStyle = {
+};
+
+const formStyle = {
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: '20px',
     backgroundColor: 'white',
     width: '22%',
-    
-  };
-  
+
+};
+
 
 export default function TrainPage() {
 
     return (
 
-        <div className="row"  style={backgroundStyle}>
+        <div className="row" style={backgroundStyle}>
 
             <div className="col-lg-3 mt-4 mb-4" style={formStyle}>
 
@@ -130,7 +129,7 @@ export default function TrainPage() {
 
                 <h3 className="text-dark fw-bold mt-3" style={{ marginLeft: "30px" }}>TRAIN DETAILS</h3>
                 <table className="table table-striped table-bordered fw-bold table-hover " style={{ fontSize: "20px" }}>
-                    <thead class="bg-dark text-light">
+                    <thead class="bg-light text-dark">
                         <tr>
                             <th scope="col">From</th>
                             <th scope="col">To</th>
@@ -145,9 +144,26 @@ export default function TrainPage() {
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Ambalangoda</td>
+                            <td>Balana</td>
+                            <td>180KM</td>
+                            <td>RS: 310.00</td>
+                            <td>10.30 AM</td>
+                            <td>12.15 PM</td>
+                            <td>12/11/2023</td>
+                            <td>
 
 
-
+                                <a className="edit" title="Edit" data-toggle="tooltip">
+                                    <i className="material-icons">Edit</i>
+                                </a>
+                                &nbsp;&nbsp;
+                                <a className="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
+                                    <i className="material-icons">Delete</i>
+                                </a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 

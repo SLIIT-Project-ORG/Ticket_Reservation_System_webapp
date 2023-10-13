@@ -28,7 +28,7 @@ export default function Login() {
         <div className="card col-3 mt-5" style={formStyle}>
           <form className="mt-5 ml-5">
             <div class="form-outline mb-4">
-              <input type="username" id="username" class="form-control" required  />
+              <input type="username" id="username" class="form-control" required />
               <label class="form-label" for="form2Example1">
                 User Name
               </label>
@@ -39,10 +39,10 @@ export default function Login() {
                 Password
               </label>
             </div>
-            <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px'  }} >
+            <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} >
               Sign in
             </button>
-            <button type="button" class="btn btn-danger btn-block mb-4 form-control"  style={{ width: '200px' }} >
+            <button type="button" class="btn btn-danger btn-block mb-4 form-control" style={{ width: '200px' }} >
               Cancel
             </button>
           </form>

@@ -45,11 +45,11 @@ export default function TravelerProfile() {
               <td>30</td>
               <td>johndoe@example.com</td>
               <td>
-              <a className="edit" title="Edit" data-toggle="tooltip">
+                <a className="edit" title="Edit" data-toggle="tooltip">
                   <i className="material-icons">Activate</i>
                 </a>
                 &nbsp;&nbsp;
-                
+
                 <a className="edit" title="Edit" data-toggle="tooltip">
                   <i className="material-icons">Edit</i>
                 </a>

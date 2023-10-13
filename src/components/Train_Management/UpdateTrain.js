@@ -7,25 +7,25 @@ const backgroundStyle = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     minHeight: '100vh', // Ensures the background covers the entire viewport height
-  };
-  
-  const formStyle = {
+};
+
+const formStyle = {
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: '20px',
     backgroundColor: 'white',
     width: '22%',
-    marginLeft:'16cm'
-    
-  };
-  
+    marginLeft: '16cm'
+
+};
+
 
 export default function UpdateTrainPage() {
 
     return (
 
-        <div className="row"  style={backgroundStyle}>
- <h1 className="text-black mt-4  b">UPDATE TRAIN</h1>
+        <div className="row" style={backgroundStyle}>
+            <h1 className="text-black mt-4  b">UPDATE TRAIN</h1>
             <div className="col-lg-3 mt-4 mb-4" style={formStyle}>
 
                 <form className=" ml-5">
@@ -122,10 +122,10 @@ export default function UpdateTrainPage() {
             </div>
 
 
-           
-            </div>
 
-    
+        </div>
+
+
     );
 
 }
