@@ -7,7 +7,26 @@ const backgroundStyle = {
   minHeight: '100vh',
 };
 
-export default function TravelerProfile() {
+export default function TravelerProfile(props) {
+
+  const id = props.match.params.id;
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://ead-rest-api.onrender.com/user/all")
+      .then((res) => {
+        if (res.data.success) {
+          setUsers(res.data.users);
+        } else {
+          alert("Failed to get users");
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+
   return (
     <div style={backgroundStyle}>
       <div className="row"></div>
@@ -37,31 +56,35 @@ export default function TravelerProfile() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>johndoe123</td>
-              <td>555-555-5555</td>
-              <td>30</td>
-              <td>johndoe@example.com</td>
-              <td>
-                <a className="edit" title="Edit" data-toggle="tooltip">
-                  <i className="material-icons">Activate</i>
-                </a>
-                &nbsp;&nbsp;
+            {users.map((key, val) => {
+              <tr>
+                <td>{val.firstName}</td>
+                <td>{val.lastName}</td>
+                <td>{val.username}</td>
+                <td>{val.mobileNo}</td>
+                <td>{val.age}</td>
+                <td>{val.email}</td>
+                <td>
+                  <a className="edit" title="Edit" data-toggle="tooltip">
+                    <i className="material-icons">Activate</i>
+                  </a>
+                  &nbsp;&nbsp;
 
-                <a className="edit" title="Edit" data-toggle="tooltip">
-                  <i className="material-icons">Edit</i>
-                </a>
-                &nbsp;&nbsp;
-                <a className="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                  <i className="material-icons">Delete</i>
-                </a>
-              </td>
-            </tr>
+                  <a className="edit" title="Edit" data-toggle="tooltip">
+                    <i className="material-icons">Edit</i>
+                  </a>
+                  &nbsp;&nbsp;
+                  <a className="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
+                    <i className="material-icons">Delete</i>
+                  </a>
+                </td>
+              </tr>
+            }
+            )}
           </tbody>
         </table>
       </div>
     </div>
   );
+
 }
