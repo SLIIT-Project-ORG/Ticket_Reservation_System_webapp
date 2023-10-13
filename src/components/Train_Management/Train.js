@@ -20,6 +20,29 @@ const formStyle = {
 
 export default function TrainPage() {
 
+    const [trainName, setTrainName] = useState("");
+    const [capacity, setCapacity] = useState("");
+    const [trainTypeId, setTrainTypeId] = useState("");
+    const [desciption, setDescription] = useState("");
+
+    function createTrain() {
+
+        const trainReqData = { trainName, capacity, trainTypeId, desciption };
+        console.log(trainReqData);
+
+        axios.post("https://ead-rest-api.onrender.com/api/v1/train", trainReqData)
+            .then((res) => {
+                if (res.data) {
+                    alert("Train Created Successfully");
+                } else {
+                    alert("Train Creation Failed");
+                }
+            })
+            .catch((err) => {
+                alert(err);
+            });
+    }
+
     return (
 
         <div className="row" style={backgroundStyle}>
@@ -28,86 +51,49 @@ export default function TrainPage() {
 
                 <form className=" ml-5">
                     <div class="form-outline mb-4" >
-                        <input class="form-control" required />
+                        <input class="form-control" required id='trainName' onClick={
+                            (e) => {
+                                setTrainName(e.target.value);
+                            }
+                        } />
                         <label class="form-label" for="form2Example1">
                             Train Name
                         </label>
                     </div>
                     <div class="form-outline mb-4">
-
-
-                        <select class="form-select" aria-label="Default select example" className="form-control" name="From" style={{ fontSize: "20px" }} required >
-                            <option selected>Select</option>
-                            <option value="Abanpola">Abanpola</option>
-                            <option value="Akurala">Akurala</option>
-                            <option value="Ambalangoda">Ambalangoda</option>
-                            <option value="Avissawella">Avissawella</option>
-                            <option value="Balana">Balana</option>
-                            <option value="Beruwala">Beruwala</option>
-                            <option value="chilaw">chilaw</option>
-                            <option value="ColomboFort">Colombo Fort</option>
-                            <option value="Demodara">Demodara</option>
-                            <option value="Elle">Elle</option>
-                            <option value="Gampaha">Gampaha</option>
-                            <option value="Haliela">Haliela</option>
-
-                        </select>
-                        <label for="class">From</label><br />
+                        <input class="form-control" required id='capacity' onClick={
+                            (e) => {
+                                setCapacity(e.target.value);
+                            }
+                        } />
+                        <label for="class">Capacity</label><br />
                     </div>
                     <div class="form-outline mb-4">
 
 
-                        <select class="form-select" aria-label="Default select example" className="form-control" name="From" style={{ fontSize: "20px" }} required >
-                            <option selected>Select</option>
-                            <option value="Abanpola">Abanpola</option>
-                            <option value="Akurala">Akurala</option>
-                            <option value="Ambalangoda">Ambalangoda</option>
-                            <option value="Avissawella">Avissawella</option>
-                            <option value="Balana">Balana</option>
-                            <option value="Beruwala">Beruwala</option>
-                            <option value="chilaw">chilaw</option>
-                            <option value="ColomboFort">Colombo Fort</option>
-                            <option value="Demodara">Demodara</option>
-                            <option value="Elle">Elle</option>
-                            <option value="Gampaha">Gampaha</option>
-                            <option value="Haliela">Haliela</option>
-
-                        </select>
-                        <label for="class">To</label><br />
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input class="form-control" required />
-                        <label class="form-label" for="form2Example1">
-                            Distance
-                        </label>
+                        <input class="form-control" required id='description' onClick={
+                            (e) => {
+                                setDescription(e.target.value);
+                            }
+                        } />
+                        <label for="class">Description</label><br />
                     </div>
 
-                    <div class="form-outline mb-4">
-                        <input class="form-control" required />
-                        <label class="form-label" for="form2Example1">
-                            Ticket Fee
-                        </label>
-                    </div>
+                    <select class="form-select" aria-label="Default select example" className="form-control" name="trainTypeId" style={{ fontSize: "20px" }} required onChange={
+                        (e) => {
+                            setTrainTypeId(e.target.value);
+                        }
+                    }>
+                        <option selected>Select Train Type</option>
+                        <option value={1}>Express</option>
+                        <option value={2}>Intercity</option>
+                    </select>
 
-                    <div class="form-outline mb-4">
-
-                        <input type='Time' name='btime' id='btime' className='form-control' style={{ fontSize: "20px" }} />
-                        <label for="class">Begging Time:</label><br />
-                    </div>
-
-                    <div class="form-outline mb-4">
-
-                        <input type='Time' name='btime' id='btime' className='form-control' style={{ fontSize: "20px" }} />
-                        <label for="class">Arrival Time:</label><br />
-                    </div>
-
-                    <div class="form-outline mb-4">
-
-                        <input type='Date' name='date' id='date' className='form-control' style={{ fontSize: "20px" }} />
-                        <label for="Date">Date:</label><br />
-
-                    </div>
-                    <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} >
+                    <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} onClick={
+                        () => {
+                            createTrain();
+                        }
+                    }>
                         ADD NOW
                     </button>
                     <button type="button" class="btn btn-danger btn-block mb-4 form-control" style={{ width: '200px' }} >
