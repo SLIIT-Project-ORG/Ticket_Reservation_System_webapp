@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React,{ useState, useEffect } from 'react';
+import axios from 'axios';
 
 const backgroundStyle = {
     backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
@@ -14,6 +14,7 @@ const formStyle = {
     padding: '20px',
     backgroundColor: 'white',
     width: '22%',
+    height:500
 
 };
 
@@ -79,7 +80,7 @@ export default function TrainPage() {
                         <label for="class">Description</label><br />
                     </div>
 
-                    <select class="form-select" aria-label="Default select example" className="form-control" name="trainTypeId" style={{ fontSize: "20px" }} required onChange={
+                    <select class="form-select" aria-label="Default select example" className="form-control" name="trainTypeId" style={{ fontSize: "15px" }} required onChange={
                         (e) => {
                             setTrainTypeId(e.target.value);
                         }
@@ -89,7 +90,7 @@ export default function TrainPage() {
                         <option value={2}>Intercity</option>
                     </select>
 
-                    <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} onClick={
+                    <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px',marginTop:'20px' }} onClick={
                         () => {
                             createTrain();
                         }
@@ -117,27 +118,22 @@ export default function TrainPage() {
                 <table className="table table-striped table-bordered fw-bold table-hover " style={{ fontSize: "20px" }}>
                     <thead class="bg-light text-dark">
                         <tr>
-                            <th scope="col">From</th>
-                            <th scope="col">To</th>
-                            <th scope="col">Distance</th>
-                            <th scope="col">Ticket Fee(Rs)</th>
-                            <th scope="col">Begging Time</th>
-                            <th scope="col">Arrival TIme</th>
-
-                            <th scope="col">Date</th>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Capacity</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Train Type</th>
+                            
                             <th>Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Ambalangoda</td>
-                            <td>Balana</td>
-                            <td>180KM</td>
-                            <td>RS: 310.00</td>
-                            <td>10.30 AM</td>
-                            <td>12.15 PM</td>
-                            <td>12/11/2023</td>
+                            <td>Ruhunu Kumari</td>
+                            <td>Seat 1200</td>
+                            <td>Beliaththa to colombo Fort</td>
+                            <td>Express</td>
+                          
                             <td>
 
 

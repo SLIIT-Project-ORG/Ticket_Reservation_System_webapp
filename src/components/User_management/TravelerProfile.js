@@ -1,4 +1,5 @@
-import React from "react";
+import React,{ useState, useEffect } from 'react';
+import axios from 'axios';
 
 const backgroundStyle = {
   backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
