@@ -144,6 +144,8 @@ export default function TrainPage() {
                             <td><button style={{ 'border': 'none'}}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
 
                                                                 <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
+                                                                
+
                                                             </td>
                             </td>
                         </tr>
