@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 const backgroundStyle = {
   backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
@@ -13,22 +14,23 @@ const formStyle = {
 };
 
 export default function Login() {
-  const [username, setUsername] = useState("");
+  const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function loginUser() {
     console.log("Login User");
 
-    const loginReqData = { username, password };
+    const loginReqData = { userName, password };
     console.log(loginReqData);
 
-    axios.post("https://ead-rest-api.onrender.com/user/login", loginReqData).then((res) => {
+    axios.post("https://ead-rest-api.onrender.com/authenticate/login", loginReqData).then((res) => {
       if (res.data.success) {
-        alert("Login Successful");
+        // alert("Login Successful");
+        console.log(res.data);
+        sessionStorage.setItem("email", res.data.email);
+        sessionStorage.setItem("userId", res.data.userId);
 
-        localStorage.setItem("userType", res.data.user.userType);
-        localStorage.setItem("userId", res.data.user._id);
-        localStorage.setItem("username", res.data.user.username);
+        window.location.href = "/";
       } else {
         alert("Invalid login credentials");
       }
