@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={userId ? <Home/> : <Navigate to="/login"/>} />
           <Route path="/login" element={userId ? <Navigate to="/" /> : <Login />} />
-          <Route path="/register" element={userId ? <Navigate to="/" /> : <Register />} />
+          <Route path="/register" element={userId ? <Register /> : <Navigate to="/" />} />
           <Route path="/backoffice" element={userId ? <BackOffice /> : <Navigate to="/login" />} />
           <Route path="/travelerprofile" element={userId ? <TravelerProfile /> : <Navigate to="/login" />} />
           <Route path="/train" element={userId ? <TrainPage /> : <Navigate to="/login" />} />
