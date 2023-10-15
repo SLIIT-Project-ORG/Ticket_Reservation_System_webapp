@@ -23,10 +23,11 @@ export default function Register() {
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
   const [mobileNo, setMobileNumber] = useState("");
-  const [age, setAge] = useState("");
+  const [ageValue, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+  const [nic, setNic] = useState("");
 
   function registerUser() {
     if (password !== confirmPass) {
@@ -34,15 +35,22 @@ export default function Register() {
       return;
     }
 
-    const registerReqData = { firstName, lastName, userName, mobileNo, age, email, password };
+    const age = parseInt(ageValue);
+    const roleId = 1;
+    const gender = "test";
+    const description = "test";
+    const imageRef = "test";
+
+    const registerReqData = { firstName, lastName, userName, mobileNo, age, email, password, nic, gender, imageRef, description, roleId};
     console.log(registerReqData);
 
-    axios.post("https://ead-rest-api.onrender.com/user/register", registerReqData)
+    axios.post("https://ead-rest-api.onrender.com/authenticate/register", registerReqData)
     .then((res) => {
       if (res.data.success) {
-        alert("Registration Successfull");
+        alert(res.data.message);
       } else {
-        alert("Registration Failed");
+        console.log(res.data);
+        alert(res.data.message);
       }
     })
     .catch((err) => {
@@ -130,6 +138,18 @@ export default function Register() {
             </div>
             <div className="d-flex">
               <div className="form-outline mb-4" style={columnStyle}>
+                <input className="form-control" id="nic" onChange={
+                  (e) => {
+                    setNic(e.target.value);
+                  }
+                }/>
+                <label className="form-label" htmlFor="form2Example2">
+                  NIC
+                </label>
+              </div>
+            </div>
+            <div className="d-flex">
+              <div className="form-outline mb-4" style={columnStyle}>
                 <input className="form-control" id="password" onChange={
                   (e) => {
                     setPassword(e.target.value);
@@ -161,7 +181,7 @@ export default function Register() {
               type="button"
               className="btn btn-primary btn-block mb-4 form-control"
               style={{ width: '200px' }}
-              onAbort={
+              onClick={
                 () => {
                   registerUser();
                 }
