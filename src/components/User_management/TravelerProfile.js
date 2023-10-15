@@ -33,7 +33,7 @@ export default function TravelerProfile() {
       
       <div className="row "><Header></Header>
       <div className='mt-4'><NaveBar /></div>
-        <h3 className="text-black  mt-5 b">TRAVELER PROFILE DETAILS</h3>
+        <h3 className="text-black  mt-3 b">TRAVELER PROFILE DETAILS</h3>
         <div className="col-3"></div>
 
         <table
@@ -43,7 +43,7 @@ export default function TravelerProfile() {
             width: '1300px',
             backgroundColor: 'white',
             marginLeft: "120px",
-            marginTop: '30px'
+            marginTop: '15px'
           }}
         >
           <thead bg-light fw-bold text-dark>

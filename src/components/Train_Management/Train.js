@@ -116,10 +116,7 @@ export default function TrainPage() {
 
             <div className="col-lg-9 " style={{ height: "700px", overflowY: "scroll", overflow: "auto" }}>
 
-                <div className="col-lg-4  p-2 mt-2 mb-2">
-                    <input type="search" placeholder="search" name="search" className="form-control" style={{ fontSize: "20px", marginTop: "50px" }}
-                    />
-                </div>
+                
 
                 <h3 className="text-dark fw-bold mt-3" style={{ marginLeft: "30px" }}>TRAIN DETAILS</h3>
                 <table className="table table-striped table-bordered  table-hover " >
@@ -144,7 +141,7 @@ export default function TrainPage() {
                             <td>
 
 
-                            <td><button style={{ 'border': 'none' }}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
+                            <td><button style={{ 'border': 'none'}}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
 
                                                                 <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
                                                             </td>
