@@ -58,12 +58,14 @@ export default function TravelerProfile() {
                 <td>{user.username}</td>
                 <td>{user.mobileNo}</td>
                 <td>{user.email}</td>
-                <td>{user.isActive ? 'Active' : 'Inactive'}</td>
+                <td>{user.isActive ? <button className="btn btn-primary">ACTIVE</button> : <button className="btn btn-danger">INACTIVE</button>}</td>
                 
                 <td>
-                  <a className="edit" title="Edit" data-toggle="tooltip">
-                    <i className="material-icons">Activate</i>
-                  </a>
+                  <button className="btn btn-secondary" title="activate-btn" data-toggle="tooltip" >
+                    {
+                      user.isActive ? "Deactivate" : "Activate"
+                    }
+                  </button>
                   &nbsp;&nbsp;
 
                   <a className="edit" title="Edit" data-toggle="tooltip">
