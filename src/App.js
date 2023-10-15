@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Register from './components/User_management/Register';
 
 import TravelerProfile from './components/User_management/TravelerProfile';
-import BackOffice from './components/User_management/BackOfficeUser';
+
 
 import TrainPage from './components/Train_Management/Train';
 import UpdateTrainPage from './components/Train_Management/UpdateTrain';
@@ -34,8 +34,8 @@ function App() {
         <Routes>
           <Route path="/" element={userId ? <Home/> : <Navigate to="/login"/>} />
           <Route path="/login" element={userId ? <Navigate to="/" /> : <Login />} />
-          <Route path="/register" element={userId ? <Register /> : <Navigate to="/" />} />
-          <Route path="/backoffice" element={userId ? <BackOffice /> : <Navigate to="/login" />} />
+          <Route path="/register" element={userId ? <Register /> : <Navigate to="/register" />} />
+          
           <Route path="/travelerprofile" element={userId ? <TravelerProfile /> : <Navigate to="/login" />} />
           <Route path="/train" element={userId ? <TrainPage /> : <Navigate to="/login" />} />
           <Route path="/updatetrain" element={userId ? <UpdateTrainPage /> : <Navigate to="/login" />} />
