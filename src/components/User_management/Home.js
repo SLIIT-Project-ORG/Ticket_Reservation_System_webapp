@@ -12,28 +12,22 @@ const backgroundStyle = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     minHeight: '100vh',
-    
-     // Ensures the background covers the entire viewport height
-  };
-  
+
+    // Ensures the background covers the entire viewport height
+};
+
 
 export default function Home() {
 
     return (
-        
-      
-            <div className="mt-4" >
-                <Header />
-                <div style={backgroundStyle}>
+        <div className="mt-4" >
+            <Header />
+            <div style={backgroundStyle}>
                 <NaveBar />
-
-              
-                
             </div>
-            
             <Footer />
         </div>
-        
+
     )
 
 }
