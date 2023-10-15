@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import NaveBar from './NaveBar';
+import Header from './Header';
+import Footer from './Footer';
 
 const backgroundStyle = {
   backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
@@ -23,23 +26,27 @@ export default function TravelerProfile() {
   }, []);
 
   return (
-    <div style={backgroundStyle}>
-      <div className="row"></div>
-      <div className="row">
-        <h1 className="text-black mt-5 b">TRAVELER PROFILE DETAILS</h1>
+    
+    <div style={backgroundStyle} >
+     
+     
+      
+      <div className="row "><Header></Header>
+      <div className='mt-4'><NaveBar /></div>
+        <h3 className="text-black  mt-3 b">TRAVELER PROFILE DETAILS</h3>
         <div className="col-3"></div>
 
         <table
-          className="table table-striped table-hover table-bordered"
+          className="table table-striped table-bordered  table-hover "
           style={{
             overflow: 'scroll',
             width: '1300px',
             backgroundColor: 'white',
             marginLeft: "120px",
-            marginTop: '30px'
+            marginTop: '15px'
           }}
         >
-          <thead>
+          <thead bg-light fw-bold text-dark>
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
@@ -50,7 +57,7 @@ export default function TravelerProfile() {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  class="bg-light text-dark b">
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user.firstName}</td>
@@ -68,20 +75,20 @@ export default function TravelerProfile() {
                   </button>
                   &nbsp;&nbsp;
 
-                  <a className="edit" title="Edit" data-toggle="tooltip">
-                    <i className="material-icons">Edit</i>
-                  </a>
-                  &nbsp;&nbsp;
-                  <a className="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                    <i className="material-icons">Delete</i>
-                  </a>
-                </td>
-              </tr>
+                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
+
+<button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
+</td>
+
+</tr>
+               
             ))}
           </tbody>
         </table>
       </div>
+      <Footer/>
     </div>
+    
   );
 
 }

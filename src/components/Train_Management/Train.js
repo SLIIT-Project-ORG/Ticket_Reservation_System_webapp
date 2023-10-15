@@ -1,5 +1,8 @@
 import React,{ useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from '../User_management/Header';
+import NaveBar from '../User_management/NaveBar';
+import Footer from '../User_management/Footer';
 
 const backgroundStyle = {
     backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
@@ -47,6 +50,10 @@ export default function TrainPage() {
     return (
 
         <div className="row" style={backgroundStyle}>
+            <div className="row "><Header></Header>
+      <div className='mt-4'><NaveBar /></div>
+       
+        <div className="col-3"></div></div>
 
             <div className="col-lg-3 mt-4 mb-4" style={formStyle}>
 
@@ -109,14 +116,11 @@ export default function TrainPage() {
 
             <div className="col-lg-9 " style={{ height: "700px", overflowY: "scroll", overflow: "auto" }}>
 
-                <div className="col-lg-4  p-2 mt-2 mb-2">
-                    <input type="search" placeholder="search" name="search" className="form-control" style={{ fontSize: "20px", marginTop: "50px" }}
-                    />
-                </div>
+                
 
                 <h3 className="text-dark fw-bold mt-3" style={{ marginLeft: "30px" }}>TRAIN DETAILS</h3>
-                <table className="table table-striped table-bordered fw-bold table-hover " style={{ fontSize: "20px" }}>
-                    <thead class="bg-light text-dark">
+                <table className="table table-striped table-bordered  table-hover " >
+                    <thead class="bg-light fw-bold text-dark" style={{ fontSize: "20px" }}>
                         <tr>
                             <th scope="col">Train Name</th>
                             <th scope="col">Capacity</th>
@@ -127,7 +131,7 @@ export default function TrainPage() {
 
                         </tr>
                     </thead>
-                    <tbody  class="bg-light text-dark">
+                    <tbody  class="bg-light text-dark" style={{ fontSize: "17px" }}>
                         <tr>
                             <td>Ruhunu Kumari</td>
                             <td>Seat 1200</td>
@@ -137,7 +141,7 @@ export default function TrainPage() {
                             <td>
 
 
-                            <td><button style={{ 'border': 'none' }}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
+                            <td><button style={{ 'border': 'none'}}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
 
                                                                 <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
                                                             </td>
@@ -147,7 +151,7 @@ export default function TrainPage() {
                 </table>
 
             </div>
-
+<Footer></Footer>
         </div>
     );
 

@@ -67,11 +67,15 @@ export default function Login() {
               </label>
             </div>
             <button type="button" className="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} onClick={() => loginUser()}>
-              Sign in
+              Sign IN
             </button>
+            
+           
             <button type="button" className="btn btn-danger btn-block mb-4 form-control" style={{ width: '200px' } }>
               Cancel
             </button>
+            <div><a href="/register" style={{ textDecoration: "none" }}>Sign UP</a></div>
+            
           </form>
         </div>
       </div>

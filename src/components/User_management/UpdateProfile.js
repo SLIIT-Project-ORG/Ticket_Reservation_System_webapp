@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "./Header";
+import NaveBar from "./NaveBar";
 
 const backgroundStyle = {
   backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
@@ -19,11 +21,10 @@ const columnStyle = {
 export default function UpdateProfile() {
   return (
     <div style={backgroundStyle}>
-      <div className="row"></div>
-      <div className="row">
-        <h1 className="text-black mt-5 b">UPDATE PROFILE</h1>
+      <div className="row "><Header></Header>
+      <div className='mt-4'><NaveBar /></div>
+        <h3 className="text-black  mt-5 b">UPDATE PROFILE</h3>
         <div className="col-3"></div>
-
 
         <div className="card col-6 mt-2" style={formStyle}>
           <form className="mt-3 ml-5">

@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../User_management/Header';
+import NaveBar from '../User_management/NaveBar';
 
 
 
@@ -26,7 +28,10 @@ export default function UpdateTrainPage() {
     return (
 
         <div className="row" style={backgroundStyle}>
-            <h1 className="text-black mt-5  b">UPDATE TRAIN</h1>
+             <div className="row "><Header></Header>
+      <div className='mt-4'><NaveBar /></div>
+      <h3 className="text-black  mt-3 b">UPDATE TRAIN DETAILS</h3>
+        <div className="col-3"></div></div>
             <div className="col-lg-3  mb-4" style={formStyle}>
 
             <form className=" ml-5 mb-5">
