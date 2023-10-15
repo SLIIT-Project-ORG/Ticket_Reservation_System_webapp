@@ -15,7 +15,8 @@ const formStyle = {
     padding: '20px',
     backgroundColor: 'white',
     width: '22%',
-    marginLeft: '16cm'
+    marginLeft: '16cm',
+    
 
 };
 
@@ -25,97 +26,42 @@ export default function UpdateTrainPage() {
     return (
 
         <div className="row" style={backgroundStyle}>
-            <h1 className="text-black mt-4  b">UPDATE TRAIN</h1>
-            <div className="col-lg-3 mt-4 mb-4" style={formStyle}>
+            <h1 className="text-black mt-5  b">UPDATE TRAIN</h1>
+            <div className="col-lg-3  mb-4" style={formStyle}>
 
-                <form className=" ml-5">
+            <form className=" ml-5 mb-5">
                     <div class="form-outline mb-4" >
-                        <input class="form-control" required />
+                        <input class="form-control" required id='trainName'  />
                         <label class="form-label" for="form2Example1">
                             Train Name
                         </label>
                     </div>
                     <div class="form-outline mb-4">
-
-
-                        <select class="form-select" aria-label="Default select example" className="form-control" name="From" style={{ fontSize: "20px" }} required >
-                            <option selected>Select</option>
-                            <option value="Abanpola">Abanpola</option>
-                            <option value="Akurala">Akurala</option>
-                            <option value="Ambalangoda">Ambalangoda</option>
-                            <option value="Avissawella">Avissawella</option>
-                            <option value="Balana">Balana</option>
-                            <option value="Beruwala">Beruwala</option>
-                            <option value="chilaw">chilaw</option>
-                            <option value="ColomboFort">Colombo Fort</option>
-                            <option value="Demodara">Demodara</option>
-                            <option value="Elle">Elle</option>
-                            <option value="Gampaha">Gampaha</option>
-                            <option value="Haliela">Haliela</option>
-
-                        </select>
-                        <label for="class">From</label><br />
+                        <input class="form-control" required id='capacity'  />
+                        <label for="class">Capacity</label><br />
                     </div>
                     <div class="form-outline mb-4">
 
 
-                        <select class="form-select" aria-label="Default select example" className="form-control" name="From" style={{ fontSize: "20px" }} required >
-                            <option selected>Select</option>
-                            <option value="Abanpola">Abanpola</option>
-                            <option value="Akurala">Akurala</option>
-                            <option value="Ambalangoda">Ambalangoda</option>
-                            <option value="Avissawella">Avissawella</option>
-                            <option value="Balana">Balana</option>
-                            <option value="Beruwala">Beruwala</option>
-                            <option value="chilaw">chilaw</option>
-                            <option value="ColomboFort">Colombo Fort</option>
-                            <option value="Demodara">Demodara</option>
-                            <option value="Elle">Elle</option>
-                            <option value="Gampaha">Gampaha</option>
-                            <option value="Haliela">Haliela</option>
-
-                        </select>
-                        <label for="class">To</label><br />
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input class="form-control" required />
-                        <label class="form-label" for="form2Example1">
-                            Distance
-                        </label>
+                        <input class="form-control" required id='description'  />
+                        <label for="class">Description</label><br />
                     </div>
 
-                    <div class="form-outline mb-4">
-                        <input class="form-control" required />
-                        <label class="form-label" for="form2Example1">
-                            Ticket Fee
-                        </label>
-                    </div>
+                    <select class="form-select" aria-label="Default select example" className="form-control" name="trainTypeId" style={{ fontSize: "15px" }} required >
+                        <option selected>Select Train Type</option>
+                        <option value={1}>Express</option>
+                        <option value={2}>Intercity</option>
+                    </select>
 
-                    <div class="form-outline mb-4">
-
-                        <input type='Time' name='btime' id='btime' className='form-control' style={{ fontSize: "20px" }} />
-                        <label for="class">Begging Time:</label><br />
-                    </div>
-
-                    <div class="form-outline mb-4">
-
-                        <input type='Time' name='btime' id='btime' className='form-control' style={{ fontSize: "20px" }} />
-                        <label for="class">Arrival Time:</label><br />
-                    </div>
-
-                    <div class="form-outline mb-4">
-
-                        <input type='Date' name='date' id='date' className='form-control' style={{ fontSize: "20px" }} />
-                        <label for="Date">Date:</label><br />
-
-                    </div>
-                    <button type="button" class="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} >
+                    <button type="button" class="btn btn-primary btn-block mb-4 form-control"  style={{ width: '200px',marginTop:'20px' }} >
                         UPDATE NOW
                     </button>
                     <button type="button" class="btn btn-danger btn-block mb-4 form-control" style={{ width: '200px' }} >
                         CANCEL
                     </button>
                 </form>
+
+
 
 
 

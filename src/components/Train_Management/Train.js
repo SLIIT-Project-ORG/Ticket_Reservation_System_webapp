@@ -127,7 +127,7 @@ export default function TrainPage() {
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  class="bg-light text-dark">
                         <tr>
                             <td>Ruhunu Kumari</td>
                             <td>Seat 1200</td>
@@ -137,13 +137,10 @@ export default function TrainPage() {
                             <td>
 
 
-                                <a className="edit" title="Edit" data-toggle="tooltip">
-                                    <i className="material-icons">Edit</i>
-                                </a>
-                                &nbsp;&nbsp;
-                                <a className="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                                    <i className="material-icons">Delete</i>
-                                </a>
+                            <td><button style={{ 'border': 'none' }}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
+
+                                                                <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
+                                                            </td>
                             </td>
                         </tr>
                     </tbody>
