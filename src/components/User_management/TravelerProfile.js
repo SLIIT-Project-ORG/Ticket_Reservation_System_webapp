@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const backgroundStyle = {
@@ -8,20 +8,14 @@ const backgroundStyle = {
   minHeight: '100vh',
 };
 
-export default function TravelerProfile(props) {
-
-  const id = props.match.params.id;
+export default function TravelerProfile() {
 
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     axios.get("https://ead-rest-api.onrender.com/user/all")
       .then((res) => {
-        if (res.data.success) {
-          setUsers(res.data.users);
-        } else {
-          alert("Failed to get users");
-        }
+        setUsers(res.data);
       })
       .catch((err) => {
         console.log(err.message);
@@ -51,20 +45,21 @@ export default function TravelerProfile(props) {
               <th>Last Name</th>
               <th>User Name</th>
               <th>Mobile Number</th>
-              <th>Age</th>
               <th>Email</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((key, val) => {
-              <tr>
-                <td>{val.firstName}</td>
-                <td>{val.lastName}</td>
-                <td>{val.username}</td>
-                <td>{val.mobileNo}</td>
-                <td>{val.age}</td>
-                <td>{val.email}</td>
+            {users.map((user) => (
+              <tr key={user._id}>
+                <td>{user.firstName}</td>
+                <td>{user.lastName}</td>
+                <td>{user.username}</td>
+                <td>{user.mobileNo}</td>
+                <td>{user.email}</td>
+                <td>{user.isActive ? 'Active' : 'Inactive'}</td>
+                
                 <td>
                   <a className="edit" title="Edit" data-toggle="tooltip">
                     <i className="material-icons">Activate</i>
@@ -80,8 +75,7 @@ export default function TravelerProfile(props) {
                   </a>
                 </td>
               </tr>
-            }
-            )}
+            ))}
           </tbody>
         </table>
       </div>
