@@ -8,7 +8,7 @@ const backgroundStyle = {
   backgroundImage: `url('https://png.pngtree.com/thumb_back/fh260/background/20210206/pngtree-blue-green-glow-light-effect-blur-background-image_556767.jpg')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-  minHeight: '100vh',
+  minHeight: '100vh', // Ensures the background covers the entire viewport height
 };
 
 const formStyle = {

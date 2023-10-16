@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import TravelAgentNavBar from "./TravelAgentNavBar";
+import { useParams } from "react-router";
+import axios from "axios";
 
 const backgroundStyle = {
   backgroundImage: `url('https://png.pngtree.com/thumb_back/fh260/background/20210206/pngtree-blue-green-glow-light-effect-blur-background-image_556767.jpg')`,
@@ -19,6 +21,37 @@ const columnStyle = {
 };
 
 export default function UpdateProfile() {
+
+  const { id } = useParams();
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    axios.get(`https://ead-rest-api.onrender.com/user/${id}`)
+      .then((res) => {
+        setUser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setUser({ ...user, [name]: value });
+  };
+
+  const updateUser = (e) => {
+    e.preventDefault();
+    console.log(user);
+    axios.put(`https://ead-rest-api.onrender.com/user/${id}`, user)
+      .then(() => {
+        alert("update Successful");
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
   return (
     <div style={backgroundStyle}>
       <div className="row "><Header></Header>
@@ -30,13 +63,17 @@ export default function UpdateProfile() {
           <form className="mt-3 ml-5">
             <div className="d-flex">
               <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" required />
+                <input className="form-control" required name="firstName" value={user.firstName} onChange={
+                  handleChange
+                } />
                 <label className="form-label" htmlFor="form2Example1">
                   First Name
                 </label>
               </div>
               <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
+                <input className="form-control" name="lastName" value={user.lastName} onChange={
+                  handleChange
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Last Name
                 </label>
@@ -45,13 +82,17 @@ export default function UpdateProfile() {
 
             <div className="d-flex">
               <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
+                <input className="form-control" name="username" value={user.username} onChange={
+                  handleChange
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   User Name
                 </label>
               </div>
               <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
+                <input className="form-control" name="mobileNo" value={user.mobileNo} onChange={
+                  handleChange
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Mobile Number
                 </label>
@@ -60,29 +101,19 @@ export default function UpdateProfile() {
 
             <div className="d-flex">
               <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
+                <input className="form-control" name="age" value={user.age} onChange={
+                  handleChange
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Age
                 </label>
               </div>
               <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
+                <input className="form-control" name="email" value={user.email} onChange={
+                  handleChange
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Email
-                </label>
-              </div>
-            </div>
-            <div className="d-flex">
-              <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
-                <label className="form-label" htmlFor="form2Example2">
-                  Password
-                </label>
-              </div>
-              <div className="form-outline mb-4" style={columnStyle}>
-                <input className="form-control" />
-                <label className="form-label" htmlFor="form2Example2">
-                  Confirm Password
                 </label>
               </div>
             </div>
@@ -97,6 +128,11 @@ export default function UpdateProfile() {
               type="button"
               className="btn btn-primary btn-block mb-4 form-control"
               style={{ width: '200px' }}
+              onClick={
+                (e) => {
+                  updateUser(e);
+                }
+              }
             >
               Update
             </button>

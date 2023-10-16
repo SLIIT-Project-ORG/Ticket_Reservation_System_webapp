@@ -24,6 +24,17 @@ export default function TravelerProfileEdit() {
       });
   }, []);
 
+  const deleteUser = (userId) => {
+    axios.delete("https://ead-rest-api.onrender.com/user/" + userId)
+      .then((res) => {
+        alert("User account Deleted Successfully");
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
 
     <div style={backgroundStyle} >
@@ -63,8 +74,12 @@ export default function TravelerProfileEdit() {
                 <td>{user.mobileNo}</td>
                 <td>{user.email}</td>
                 <td>
-                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt='' /></a></button>
-                  <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt='' /></button>
+                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile/${user.userId}`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt='' /></a></button>
+                  <button style={{ 'border': 'none' }} onClick={
+                    () => {
+                      deleteUser(user.userId);
+                    }
+                  }><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt='' /></button>
                 </td>
               </tr>
             ))}

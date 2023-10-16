@@ -24,6 +24,17 @@ export default function TravelerProfile() {
       });
   }, []);
 
+  const activateUser = (id) => {
+    axios.put(`https://ead-rest-api.onrender.com/user/reactivate/${id}`)
+      .then((res) => {
+        alert(res.data.message);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }
+
   return (
 
     <div style={backgroundStyle} >
@@ -55,7 +66,7 @@ export default function TravelerProfile() {
           </thead>
           <tbody class="bg-light text-dark b">
             {users.map((user) => (
-              <tr key={user._id}>
+              <tr key={user.userId}>
                 <td>{user.firstName}</td>
                 <td>{user.lastName}</td>
                 <td>{user.username}</td>
@@ -64,7 +75,9 @@ export default function TravelerProfile() {
                 <td>{user.isActive ? <button className="btn btn-primary">ACTIVE</button> : <button className="btn btn-danger">INACTIVE</button>}</td>
 
                 <td>
-                  <button className="btn btn-secondary" title="activate-btn" data-toggle="tooltip" >
+                  <button className="btn btn-secondary" title="activate-btn" data-toggle="tooltip" onClick={
+                    () => activateUser(user.userId)
+                  }>
                     {
                       user.isActive ? "Deactivate" : "Activate"
                     }
