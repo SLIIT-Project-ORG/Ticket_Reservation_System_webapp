@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
 
 const backgroundStyle = {
   backgroundImage: `url('https://png.pngtree.com/thumb_back/fh260/background/20210206/pngtree-blue-green-glow-light-effect-blur-background-image_556767.jpg')`,
@@ -27,10 +26,22 @@ export default function Login() {
       if (res.data.success) {
         // alert("Login Successful");
         console.log(res.data);
-        sessionStorage.setItem("email", res.data.email);
-        sessionStorage.setItem("userId", res.data.userId);
 
-        window.location.href = "/";
+        if (res.data.roleId === 1) {
+          sessionStorage.setItem("email", res.data.email);
+          sessionStorage.setItem("userId", res.data.userId);
+          sessionStorage.setItem("role", "backoffice-user");
+          window.location.href = "/backoffice";
+        } else if (res.data.roleId === 2) {
+          sessionStorage.setItem("email", res.data.email);
+          sessionStorage.setItem("userId", res.data.userId);
+          sessionStorage.setItem("role", "travel-agent");
+          window.location.href = "/travelagent";
+        } else {
+          alert("You have no permission to access this site");
+          window.location.href = "/login";
+        }
+
       } else {
         alert("Invalid login credentials");
       }
@@ -69,13 +80,13 @@ export default function Login() {
             <button type="button" className="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px' }} onClick={() => loginUser()}>
               Sign IN
             </button>
-            
-           
-            <button type="button" className="btn btn-danger btn-block mb-4 form-control" style={{ width: '200px' } }>
+
+
+            <button type="button" className="btn btn-danger btn-block mb-4 form-control" style={{ width: '200px' }}>
               Cancel
             </button>
             <div><a href="/register" style={{ textDecoration: "none" }}>Sign UP</a></div>
-            
+
           </form>
         </div>
       </div>

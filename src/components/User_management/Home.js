@@ -21,11 +21,11 @@ export default function Home() {
 
     return (
         <div className="mt-4" >
-            <Header />
+            {/* <Header /> */}
             <div style={backgroundStyle}>
                
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
 
     )

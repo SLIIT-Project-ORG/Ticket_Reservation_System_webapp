@@ -1,7 +1,6 @@
-import React,{ useState, useEffect } from 'react';
+import React,{ useState } from 'react';
 import axios from 'axios';
 import Header from '../User_management/Header';
-import NaveBar from '../User_management/NaveBar';
 import Footer from '../User_management/Footer';
 import BackOfficeNavBar from '../User_management/BackOfficeNavBar';
 
@@ -21,7 +20,6 @@ const formStyle = {
     height:500
 
 };
-
 
 export default function TrainPage() {
 
@@ -52,7 +50,7 @@ export default function TrainPage() {
 
         <div className="row" style={backgroundStyle}>
             <div className="row "><Header></Header>
-      <div><BackOfficeNavBar /></div>
+      <div><BackOfficeNavBar/></div>
        
         <div className="col-3"></div></div>
 
