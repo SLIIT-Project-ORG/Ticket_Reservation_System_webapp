@@ -59,6 +59,7 @@ export default function TravelerProfile() {
               <th>Last Name</th>
               <th>User Name</th>
               <th>Mobile Number</th>
+              <th>NIC</th>
               <th>Email</th>
               <th>Status</th>
               <th>Action</th>
@@ -71,6 +72,7 @@ export default function TravelerProfile() {
                 <td>{user.lastName}</td>
                 <td>{user.username}</td>
                 <td>{user.mobileNo}</td>
+                <td>{user.nic}</td>
                 <td>{user.email}</td>
                 <td>{user.isActive ? <button className="btn btn-primary">ACTIVE</button> : <button className="btn btn-danger">INACTIVE</button>}</td>
 
