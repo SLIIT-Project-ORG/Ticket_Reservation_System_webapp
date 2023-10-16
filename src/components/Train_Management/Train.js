@@ -49,7 +49,7 @@ export default function TrainPage() {
     return (
 
         <div className="row" style={backgroundStyle}>
-            <div className="row "><Header></Header>
+            <div className="row ">
       <div><BackOfficeNavBar/></div>
        
         <div className="col-3"></div></div>
@@ -152,7 +152,6 @@ export default function TrainPage() {
                 </table>
 
             </div>
-<Footer></Footer>
         </div>
     );
 
