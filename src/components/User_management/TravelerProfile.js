@@ -25,13 +25,10 @@ export default function TravelerProfile() {
   }, []);
 
   return (
-    
+
     <div style={backgroundStyle} >
-     
-     
-      
       <div className="row "><Header></Header>
-      <div><BackOfficeNavBar /></div>
+        <div><BackOfficeNavBar /></div>
         <h3 className="text-black  mt-3 b">TRAVELER PROFILE DETAILS</h3>
         <div className="col-3"></div>
 
@@ -56,7 +53,7 @@ export default function TravelerProfile() {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody  class="bg-light text-dark b">
+          <tbody class="bg-light text-dark b">
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user.firstName}</td>
@@ -65,7 +62,7 @@ export default function TravelerProfile() {
                 <td>{user.mobileNo}</td>
                 <td>{user.email}</td>
                 <td>{user.isActive ? <button className="btn btn-primary">ACTIVE</button> : <button className="btn btn-danger">INACTIVE</button>}</td>
-                
+
                 <td>
                   <button className="btn btn-secondary" title="activate-btn" data-toggle="tooltip" >
                     {
@@ -73,18 +70,15 @@ export default function TravelerProfile() {
                     }
                   </button>
                   &nbsp;&nbsp;
-
-</td>
-
-</tr>
-               
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
-      
+
     </div>
-    
+
   );
 
 }

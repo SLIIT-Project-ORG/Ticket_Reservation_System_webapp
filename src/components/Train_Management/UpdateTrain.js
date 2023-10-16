@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../User_management/Header";
-import NaveBar from "../User_management/NaveBar";
 import BackOfficeNavBar from "../User_management/BackOfficeNavBar";
 
 
@@ -13,7 +12,7 @@ const backgroundStyle = {
 
 const formStyle = {
   marginLeft: '1cm', // Move the form to the right by 1cm
-  
+
 };
 
 const columnStyle = {
@@ -25,7 +24,7 @@ export default function UpdateTrainPage() {
   return (
     <div style={backgroundStyle}>
       <div className="row "><Header></Header>
-      <div><BackOfficeNavBar /></div>
+        <div><BackOfficeNavBar /></div>
         <h3 className="text-black  mt-5 b">UPDATE TRAIN DETAILS</h3>
         <div className="col-3"></div>
 
@@ -54,38 +53,32 @@ export default function UpdateTrainPage() {
                 </label>
               </div>
 
-              
-             
+
+
             </div>
 
             <div className="d-flex">
               <div className="form-outline mb-4" style={columnStyle}>
-                
-              <select class="form-select" aria-label="Default select example" className="form-control" name="trainTypeId" style={{ fontSize: "15px" }} required
-                    >
-                        <option selected>Select Train Type</option>
-                        <option value={1}>Express</option>
-                        <option value={2}>Intercity</option>
-                    </select>
+
+                <select className="form-select form-control" aria-label="Default select example" name="trainTypeId" style={{ fontSize: "15px" }} required defaultValue={1}
+                >
+                  <option defaultValue={1}>Select Train Type</option>
+                  <option value={1}>Express</option>
+                  <option value={2}>Intercity</option>
+                </select>
                 <label className="form-label" htmlFor="form2Example1">
                   Train Type
                 </label>
               </div>
-              
+
               <div className="form-outline mb-4" style={columnStyle}>
                 <input className="form-control" />
                 <label className="form-label" htmlFor="form2Example2">
                   Comments
                 </label>
-                
+
               </div>
             </div>
-
-
-
-          
-        
-
 
             <button
               type="button"

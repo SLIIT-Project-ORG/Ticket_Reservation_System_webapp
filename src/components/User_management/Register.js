@@ -149,7 +149,7 @@ export default function Register() {
                 </label>
               </div>
               <div className="form-outline mb-4" style={columnStyle}>
-                <select name='userRole' id='userRole' className="form-control"
+                <select name='userRole' id='userRole' className="form-control" defaultValue={"1"}
                   onChange={
                     (e) => {
                       setUserRole(e.target.value);
