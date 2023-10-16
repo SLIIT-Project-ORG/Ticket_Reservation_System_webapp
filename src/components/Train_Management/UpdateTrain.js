@@ -13,6 +13,7 @@ const backgroundStyle = {
 
 const formStyle = {
   marginLeft: '1cm', // Move the form to the right by 1cm
+  
 };
 
 const columnStyle = {
