@@ -4,9 +4,9 @@
     overflow: hidden;
     /*Time for some styling*/
     margin: 100px auto;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
     -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 }
 
   
@@ -24,13 +24,13 @@
     width: 220px;
     float: left;
     border-left: 1px solid #888;
-    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
     /*Transitions to give animation effect*/
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     /*If you hover on the images now you should be able to 
 	see the basic accordian*/
 }

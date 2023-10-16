@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import NaveBar from "./NaveBar";
 import TravelAgentNavBar from "./TravelAgentNavBar";
 
 const backgroundStyle = {

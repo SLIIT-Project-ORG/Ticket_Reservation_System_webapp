@@ -6,13 +6,11 @@ function DefaultHeader() {
     return (
         <div className="header">
         
-        {/*---- Include the above in your HEAD tag --------*/}
-        
         {/* Navigation */}
         <div className="fixed-top">
           <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-2">
             <div className="container">
-              <a className="navbar-brand" rel="nofollow" target="_blank" href="#" style={{textTransform: 'uppercase'}}>TICKET BOOKING.COM
+              <a className="navbar-brand" rel="nofollow" target="_blank" href="/" style={{textTransform: 'uppercase'}}>TICKET BOOKING.COM
               </a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />

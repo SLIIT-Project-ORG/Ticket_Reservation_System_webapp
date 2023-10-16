@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import '../../styles/Header.css'
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
       <div className="fixed-top">
         <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-2">
           <div className="container">
-            <a className="navbar-brand" rel="nofollow" target="_blank" href="#" style={{ textTransform: 'uppercase' }}>TICKET BOOKING.COM
+            <a className="navbar-brand" rel="nofollow" target="_blank" href="/" style={{ textTransform: 'uppercase' }}>TICKET BOOKING.COM
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />

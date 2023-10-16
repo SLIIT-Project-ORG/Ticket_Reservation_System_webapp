@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const backgroundStyle = {
@@ -62,12 +62,12 @@ export default function Register() {
   return (
     <div style={backgroundStyle}>
       <div className="row"></div>
-      <div className="row">
+      <div className="row mt-5">
         <h1 className="text-black mt-5 b">SIGN UP</h1>
         <div className="col-3"></div>
 
 
-        <div className="card col-6 mt-2" style={formStyle}>
+        <div className="card col-6 mt-2 mb-5" style={formStyle}>
           <form className="mt-3 ml-5">
             <div className="d-flex">
               <div className="form-outline mb-4" style={columnStyle}>
