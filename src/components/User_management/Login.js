@@ -53,7 +53,7 @@ export default function Login() {
   return (
     <div style={backgroundStyle}>
       <div className="row"></div>
-      <div className="row">
+      <div className="row  mt-5">
         <h1 className="text-black mt-5 b">SIGN IN</h1>
         <div className="col-3"></div>
         <div className="col-lg-3 d-none d-lg-flex mt-5">
