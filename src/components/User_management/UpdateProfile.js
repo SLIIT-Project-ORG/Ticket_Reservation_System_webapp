@@ -1,7 +1,10 @@
 import React from "react";
+import Header from "./Header";
+import NaveBar from "./NaveBar";
+import TravelAgentNavBar from "./TravelAgentNavBar";
 
 const backgroundStyle = {
-  backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
+  backgroundImage: `url('https://png.pngtree.com/thumb_back/fh260/background/20210206/pngtree-blue-green-glow-light-effect-blur-background-image_556767.jpg')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   minHeight: '100vh', // Ensures the background covers the entire viewport height
@@ -19,11 +22,10 @@ const columnStyle = {
 export default function UpdateProfile() {
   return (
     <div style={backgroundStyle}>
-      <div className="row"></div>
-      <div className="row">
-        <h1 className="text-black mt-5 b">UPDATE PROFILE</h1>
+      <div className="row "><Header></Header>
+      <div><TravelAgentNavBar /></div>
+        <h3 className="text-black  mt-5 b">UPDATE PROFILE</h3>
         <div className="col-3"></div>
-
 
         <div className="card col-6 mt-2" style={formStyle}>
           <form className="mt-3 ml-5">
