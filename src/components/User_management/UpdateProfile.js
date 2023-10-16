@@ -22,7 +22,7 @@ export default function UpdateProfile() {
   return (
     <div style={backgroundStyle}>
       <div className="row "><Header></Header>
-      <div><TravelAgentNavBar /></div>
+        <div><TravelAgentNavBar /></div>
         <h3 className="text-black  mt-5 b">UPDATE PROFILE</h3>
         <div className="col-3"></div>
 
@@ -86,12 +86,6 @@ export default function UpdateProfile() {
                 </label>
               </div>
             </div>
-
-
-
-
-
-
             <button
               type="button"
               className="btn btn-danger btn-block mb-4 form-control"

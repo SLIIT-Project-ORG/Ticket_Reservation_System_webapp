@@ -28,8 +28,6 @@ export default function TravelerProfileEdit() {
 
     <div style={backgroundStyle} >
 
-
-
       <div className="row "><Header></Header>
         <div><TravelAgentNavBar /></div>
         <h3 className="text-black  mt-3 b">TRAVELER PROFILE DETAILS</h3>
@@ -65,8 +63,8 @@ export default function TravelerProfileEdit() {
                 <td>{user.mobileNo}</td>
                 <td>{user.email}</td>
                 <td>
-                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt=''/></a></button>
-                  <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt=''/></button>
+                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt='' /></a></button>
+                  <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt='' /></button>
                 </td>
               </tr>
             ))}
