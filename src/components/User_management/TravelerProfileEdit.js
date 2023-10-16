@@ -60,6 +60,7 @@ export default function TravelerProfileEdit() {
               <th>Last Name</th>
               <th>User Name</th>
               <th>Mobile Number</th>
+              <th>NIC</th>
               <th>Email</th>
               <th>Actions</th>
 
@@ -72,6 +73,7 @@ export default function TravelerProfileEdit() {
                 <td>{user.lastName}</td>
                 <td>{user.username}</td>
                 <td>{user.mobileNo}</td>
+                <td>{user.nic}</td>
                 <td>{user.email}</td>
                 <td>
                   <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile/${user.userId}`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt='' /></a></button>
