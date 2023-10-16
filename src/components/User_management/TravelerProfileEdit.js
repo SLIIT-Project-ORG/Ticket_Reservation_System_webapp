@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import NaveBar from './NaveBar';
 import Header from './Header';
-import Footer from './Footer';
-import BackOfficeNavBar from './BackOfficeNavBar';
 import TravelAgentNavBar from './TravelAgentNavBar';
 
 const backgroundStyle = {
@@ -28,13 +25,13 @@ export default function TravelerProfileEdit() {
   }, []);
 
   return (
-    
+
     <div style={backgroundStyle} >
-     
-     
-      
+
+
+
       <div className="row "><Header></Header>
-      <div><TravelAgentNavBar /></div>
+        <div><TravelAgentNavBar /></div>
         <h3 className="text-black  mt-3 b">TRAVELER PROFILE DETAILS</h3>
         <div className="col-3"></div>
 
@@ -56,10 +53,10 @@ export default function TravelerProfileEdit() {
               <th>Mobile Number</th>
               <th>Email</th>
               <th>Actions</th>
-             
+
             </tr>
           </thead>
-          <tbody  class="bg-light text-dark b">
+          <tbody class="bg-light text-dark b">
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user.firstName}</td>
@@ -67,23 +64,17 @@ export default function TravelerProfileEdit() {
                 <td>{user.username}</td>
                 <td>{user.mobileNo}</td>
                 <td>{user.email}</td>
-               
                 <td>
-                 
-                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
-
-<button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
-</td>
-
-</tr>
-               
+                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt=''/></a></button>
+                  <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt=''/></button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
-      
     </div>
-    
+
   );
 
 }
