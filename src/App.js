@@ -13,6 +13,7 @@ import TravelerProfileEdit from './components/User_management/TravelerProfileEdi
 import TravelAgent from './components/User_management/TravelAgent';
 import DefaultHeader from './components/User_management/Header-Default';
 import Header from './components/User_management/Header';
+import Footer from './components/User_management/Footer';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/updatetrain" element={userId ? <UpdateTrainPage /> : <Navigate to="/login" />} />
           <Route path="/updatetravelerprofile" element={userId ? <UpdateProfile /> : <Navigate to="/login" />} />
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );

@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const backgroundStyle = {
@@ -28,6 +28,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [nic, setNic] = useState("");
+  const [role, setUserRole] = useState("");
 
   function registerUser() {
     if (password !== confirmPass) {
@@ -35,27 +36,27 @@ export default function Register() {
       return;
     }
 
+    const roleId = parseInt(role);
     const age = parseInt(ageValue);
-    const roleId = 1;
     const gender = "test";
     const description = "test";
     const imageRef = "test";
 
-    const registerReqData = { firstName, lastName, userName, mobileNo, age, email, password, nic, gender, imageRef, description, roleId};
+    const registerReqData = { firstName, lastName, userName, mobileNo, age, email, password, nic, gender, imageRef, description, roleId };
     console.log(registerReqData);
 
     axios.post("https://ead-rest-api.onrender.com/authenticate/register", registerReqData)
-    .then((res) => {
-      if (res.data.success) {
-        alert(res.data.message);
-      } else {
-        console.log(res.data);
-        alert(res.data.message);
-      }
-    })
-    .catch((err) => {
-      alert(err);
-    });
+      .then((res) => {
+        if (res.data.success) {
+          alert(res.data.message);
+        } else {
+          console.log(res.data);
+          alert(res.data.message);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }
 
   return (
@@ -84,7 +85,7 @@ export default function Register() {
                   (e) => {
                     setLastName(e.target.value);
                   }
-                }/>
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Last Name
                 </label>
@@ -107,7 +108,7 @@ export default function Register() {
                   (e) => {
                     setMobileNumber(e.target.value);
                   }
-                }/>
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Mobile Number
                 </label>
@@ -120,7 +121,7 @@ export default function Register() {
                   (e) => {
                     setAge(e.target.value);
                   }
-                }/>
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Age
                 </label>
@@ -130,7 +131,7 @@ export default function Register() {
                   (e) => {
                     setEmail(e.target.value);
                   }
-                }/>
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   Email
                 </label>
@@ -142,9 +143,25 @@ export default function Register() {
                   (e) => {
                     setNic(e.target.value);
                   }
-                }/>
+                } />
                 <label className="form-label" htmlFor="form2Example2">
                   NIC
+                </label>
+              </div>
+              <div className="form-outline mb-4" style={columnStyle}>
+                <select name='userRole' id='userRole' className="form-control"
+                  onChange={
+                    (e) => {
+                      setUserRole(e.target.value);
+                    }
+                  }
+                >
+                  <option defaultValue={"1"}>Select User Role</option>
+                  <option value="1">Backoffice User</option>
+                  <option value="2">Travel Agent</option>
+                </select>
+                <label className="form-label" htmlFor="form2Example2">
+                  User Role
                 </label>
               </div>
             </div>
@@ -154,7 +171,7 @@ export default function Register() {
                   (e) => {
                     setPassword(e.target.value);
                   }
-                } type="password"/>
+                } type="password" />
                 <label className="form-label" htmlFor="form2Example2">
                   Password
                 </label>
@@ -164,7 +181,7 @@ export default function Register() {
                   (e) => {
                     setConfirmPass(e.target.value);
                   }
-                } type="password"/>
+                } type="password" />
                 <label className="form-label" htmlFor="form2Example2">
                   Confirm Password
                 </label>
