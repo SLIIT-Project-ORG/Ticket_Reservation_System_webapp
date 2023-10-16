@@ -1,8 +1,5 @@
-
-
 import React from "react";
 import Header from "./Header";
-import BackOfficeNavBar from "./BackOfficeNavBar";
 import TravelAgentNavBar from "./TravelAgentNavBar";
 
 const backgroundStyle = {
@@ -12,9 +9,9 @@ const backgroundStyle = {
   minHeight: '100vh', // Ensures the background covers the entire viewport height
 };
 
-const imageStyle = {
-  marginright: '200cm', // Add 2cm margin to the left of the image
-};
+// const imageStyle = {
+//   marginright: '200cm', // Add 2cm margin to the left of the image
+// };
 
 export default function TravelAgent() {
   return (
