@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Header from '../User_management/Header';
-import Footer from '../User_management/Footer';
 import BackOfficeNavBar from '../User_management/BackOfficeNavBar';
 
 const backgroundStyle = {
