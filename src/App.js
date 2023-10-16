@@ -40,7 +40,7 @@ function App() {
           <Route path="/travelerprofile" element={userId ? <TravelerProfile /> : <Navigate to="/login" />} />
           <Route path="/train" element={userId ? <TrainPage /> : <Navigate to="/login" />} />
           <Route path="/updatetrain/:id" element={userId ? <UpdateTrainPage /> : <Navigate to="/login" />} />
-          <Route path="/updatetravelerprofile" element={userId ? <UpdateProfile /> : <Navigate to="/login" />} />
+          <Route path="/updatetravelerprofile/:id" element={userId ? <UpdateProfile /> : <Navigate to="/login" />} />
         </Routes>
         <Footer />
       </Router>
