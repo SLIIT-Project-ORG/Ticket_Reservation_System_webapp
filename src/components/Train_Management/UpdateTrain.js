@@ -100,6 +100,12 @@ export default function UpdateTrainPage() {
                   <option defaultValue={1}>Select Train Type</option>
                   <option value={1}>Express</option>
                   <option value={2}>Intercity</option>
+                  <option value={3}>Local Train</option>
+                  <option value={4}>Special</option>
+                  <option value={5}>Baby Train</option>
+                  <option value={6}>Long Distance</option>
+                  <option value={7}>Rail Bus</option>
+                  <option value={8}>Night Mail</option>   
                 </select>
                 <label className="form-label" htmlFor="form2Example1">
                   Train Type
