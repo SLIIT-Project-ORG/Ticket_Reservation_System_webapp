@@ -23,26 +23,29 @@ export default function TrainPage() {
 
     const [trains, setTrains] = useState([]);
 
-    const [trainName, setTrainName] = useState("");
-    const [capacity, setCapacity] = useState("");
-    const [trainTypeId, setTrainTypeId] = useState("");
-    const [desciption, setDescription] = useState("");
+    const [trainName, setTrainName] = useState('');
+    const [capacity, setCapacity] = useState('');
+    const [trainType, setTrainTypeId] = useState();
+    const [description, setDescription] = useState('');
 
     function createTrain() {
 
-        const trainReqData = { trainName, capacity, trainTypeId, desciption };
-        console.log(trainReqData);
+        const trainTypeId = parseInt(trainType);
+
+        const trainReqData = { trainName, capacity, trainTypeId, description };
+        console.log("Train Request " + trainReqData.trainName);
 
         axios.post("https://ead-rest-api.onrender.com/api/v1/train", trainReqData)
             .then((res) => {
                 if (res.data) {
                     alert("Train Created Successfully");
+                    window.location.reload();
                 } else {
                     alert("Train Creation Failed");
                 }
             })
             .catch((err) => {
-                alert(err);
+                alert(err.message);
             });
     }
 
@@ -57,6 +60,17 @@ export default function TrainPage() {
             });
     }, []);
 
+    const deleteTrain = (trainId) => {
+        axios.delete("https://ead-rest-api.onrender.com/api/v1/train/" + trainId)
+            .then((res) => {
+                alert("Train Deleted Successfully");
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
     return (
         <div className="row" style={backgroundStyle}>
             <div className="row ">
@@ -65,8 +79,9 @@ export default function TrainPage() {
             <div className="col-lg-3 mt-4 mb-4" style={formStyle}>
                 <form className=" ml-5">
                     <div className="form-outline mb-4" >
-                        <input className="form-control" required id='trainName' onClick={
+                        <input className="form-control" required id='trainName' onChange={
                             (e) => {
+                                console.log(e.target.value);
                                 setTrainName(e.target.value);
                             }
                         } />
@@ -75,7 +90,7 @@ export default function TrainPage() {
                         </label>
                     </div>
                     <div className="form-outline mb-4">
-                        <input className="form-control" required id='capacity' onClick={
+                        <input className="form-control" required id='capacity' onChange={
                             (e) => {
                                 setCapacity(e.target.value);
                             }
@@ -85,24 +100,25 @@ export default function TrainPage() {
                     <div className="form-outline mb-4">
 
 
-                        <input className="form-control" required id='description' onClick={
+                        <input className="form-control" required id='description' onChange={
                             (e) => {
                                 setDescription(e.target.value);
                             }
                         } />
                         <label htmlFor="className">Description</label><br />
                     </div>
-
-                    <select className="form-select form-control" aria-label="Default select example" name="trainTypeId" style={{ fontSize: "15px" }} defaultValue={1} required onChange={
-                        (e) => {
-                            setTrainTypeId(e.target.value);
-                        }
-                    }>
-                        <option defaultValue={1}>Select Train Type</option>
-                        <option value={1}>Express</option>
-                        <option value={2}>Intercity</option>
-                    </select>
-
+                    <div className="form-outline mb-4">
+                        <select className="form-select form-control" aria-label="Default select example" id='trainTypeId' style={{ fontSize: "15px" }} defaultValue={1} required onChange={
+                            (e) => {
+                                setTrainTypeId(e.target.value);
+                            }
+                        }>
+                            <option value={1}>Select Train Type</option>
+                            <option value={1}>Express</option>
+                            <option value={2}>Intercity</option>
+                        </select>
+                        <label htmlFor="className">Train Type</label><br />
+                    </div>
                     <button type="button" className="btn btn-primary btn-block mb-4 form-control" style={{ width: '200px', marginTop: '20px' }} onClick={
                         () => {
                             createTrain();
@@ -133,11 +149,15 @@ export default function TrainPage() {
                                 <td>{train.trainName}</td>
                                 <td>{train.capacity}</td>
                                 <td>{train.description}</td>
-                                <td>{train.trainTypeId === 1 ? "Express" :"Intercity"}</td>
+                                <td>{train.trainTypeId === 1 ? "Express" : "Intercity"}</td>
                                 <td>
-                                    <button style={{ 'border': 'none' }}><a href={`/updatetrain`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt='' /></a></button>
+                                    <button style={{ 'border': 'none' }}><a href={`/updatetrain/${train.trainId}`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" alt='' /></a></button>
 
-                                    <button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt='' /></button>
+                                    <button style={{ 'border': 'none' }} onClick={
+                                        () => {
+                                            deleteTrain(train.trainId);
+                                        }
+                                    }><img src="https://img.icons8.com/metro/25/ff0000/trash.png" alt='' /></button>
                                 </td>
                             </tr>
                         ))}
