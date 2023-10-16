@@ -11,21 +11,30 @@ import Home from './components/User_management/Home';
 import BackOffice from './components/User_management/BackOfficeUser';
 import TravelerProfileEdit from './components/User_management/TravelerProfileEdit';
 import TravelAgent from './components/User_management/TravelAgent';
+import DefaultHeader from './components/User_management/Header-Default';
+import Header from './components/User_management/Header';
 
 function App() {
-  
+
   const userId = sessionStorage.getItem('userId');
 
   return (
     <div className="App">
 
       <Router>
+        <header>
+          {userId ? (
+            <Header />
+          ) : (
+            <DefaultHeader />
+          )}
+        </header>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path='/backoffice' element={userId ? <BackOffice />: <Navigate to="/login"/>}></Route>
-          <Route path='/travelerprofileedit' element={userId ? <TravelerProfileEdit /> : <Navigate to="/login"/>}></Route>
+          <Route path='/backoffice' element={userId ? <BackOffice /> : <Navigate to="/login" />}></Route>
+          <Route path='/travelerprofileedit' element={userId ? <TravelerProfileEdit /> : <Navigate to="/login" />}></Route>
           <Route path='/travelagent' element={userId ? <TravelAgent /> : <Navigate to="/login" />}></Route>
           <Route path="/travelerprofile" element={userId ? <TravelerProfile /> : <Navigate to="/login" />} />
           <Route path="/train" element={userId ? <TrainPage /> : <Navigate to="/login" />} />
