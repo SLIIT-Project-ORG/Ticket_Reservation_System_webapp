@@ -15,6 +15,10 @@ import DefaultHeader from './components/User_management/Header-Default';
 import Header from './components/User_management/Header';
 import Footer from './components/User_management/Footer';
 
+import AddSheduleSetails from './components/Shedule_Management/AddSheduleSetails';
+import DetailsManagement from './components/Shedule_Management/ManageDetails';
+import UpdateDetails from './components/Shedule_Management/updateDetails';
+import AddSheduledetails from './components/Shedule_Management/AddSheduleDetails';
 function App() {
 
   const userId = sessionStorage.getItem('userId');
@@ -41,6 +45,16 @@ function App() {
           <Route path="/train" element={userId ? <TrainPage /> : <Navigate to="/login" />} />
           <Route path="/updatetrain/:id" element={userId ? <UpdateTrainPage /> : <Navigate to="/login" />} />
           <Route path="/updatetravelerprofile/:id" element={userId ? <UpdateProfile /> : <Navigate to="/login" />} />
+
+          {/* Route for adding new schedule details */}
+          <Route path='/postdetails' element={<AddSheduleSetails />}></Route>
+
+          {/* Route for managing details (e.g., listing schedules) */}
+          <Route path='/detailsmanage' element={<DetailsManagement />}></Route>
+
+          {/* Route for updating details with a dynamic 'id' parameter */}
+          <Route path='/updatesheduledetails/:id' element={<UpdateDetails />}></Route>
+          <Route path='/adddetails/:id/:name' element={<AddSheduledetails />}></Route>
         </Routes>
         <Footer />
       </Router>
