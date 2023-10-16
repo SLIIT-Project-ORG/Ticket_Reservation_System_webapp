@@ -4,6 +4,7 @@ import NaveBar from './NaveBar';
 import Header from './Header';
 import Footer from './Footer';
 import BackOfficeNavBar from './BackOfficeNavBar';
+import TravelAgentNavBar from './TravelAgentNavBar';
 
 const backgroundStyle = {
   backgroundImage: `url('https://png.pngtree.com/thumb_back/fh260/background/20210206/pngtree-blue-green-glow-light-effect-blur-background-image_556767.jpg')`,
@@ -12,7 +13,7 @@ const backgroundStyle = {
   minHeight: '100vh',
 };
 
-export default function TravelerProfile() {
+export default function TravelerProfileEdit() {
 
   const [users, setUsers] = useState([]);
 
@@ -33,7 +34,7 @@ export default function TravelerProfile() {
      
       
       <div className="row "><Header></Header>
-      <div><BackOfficeNavBar /></div>
+      <div><TravelAgentNavBar /></div>
         <h3 className="text-black  mt-3 b">TRAVELER PROFILE DETAILS</h3>
         <div className="col-3"></div>
 
@@ -54,8 +55,8 @@ export default function TravelerProfile() {
               <th>User Name</th>
               <th>Mobile Number</th>
               <th>Email</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Actions</th>
+             
             </tr>
           </thead>
           <tbody  class="bg-light text-dark b">
@@ -66,16 +67,12 @@ export default function TravelerProfile() {
                 <td>{user.username}</td>
                 <td>{user.mobileNo}</td>
                 <td>{user.email}</td>
-                <td>{user.isActive ? <button className="btn btn-primary">ACTIVE</button> : <button className="btn btn-danger">INACTIVE</button>}</td>
-                
+               
                 <td>
-                  <button className="btn btn-secondary" title="activate-btn" data-toggle="tooltip" >
-                    {
-                      user.isActive ? "Deactivate" : "Activate"
-                    }
-                  </button>
-                  &nbsp;&nbsp;
+                 
+                  <button style={{ 'border': 'none' }}><a href={`/updatetravelerprofile`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
 
+<button style={{ 'border': 'none' }} ><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
 </td>
 
 </tr>
