@@ -16,15 +16,11 @@ const backgroundStyle = {
 export default function TravelAgent() {
   return (
     <div style={backgroundStyle}>
-         <div className="row "><Header></Header>
-      <div><TravelAgentNavBar /></div>
-      <h3 className="text-black  mt-3 b">TRAVEL AGENT USER PANNEL</h3>
+      <div className="row "><Header></Header>
+        <div><TravelAgentNavBar /></div>
+        <h3 className="text-black  mt-3 b">TRAVEL AGENT USER PANNEL</h3>
         <div className="col-3"></div>
-           </div>
-
-          </div>
-        
-      
-    
+      </div>
+    </div>
   );
 }

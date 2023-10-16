@@ -67,13 +67,13 @@ export default function Login() {
           <form className="mt-5 ml-5">
             <div className="form-outline mb-4">
               <input type="username" id="username" className="form-control" required onChange={(e) => setUsername(e.target.value)} />
-              <label className="form-label" for="form2Example1">
+              <label className="form-label" htmlFor="form2Example1">
                 User Name
               </label>
             </div>
             <div className="form-outline mb-4">
               <input type="password" id="password" className="form-control" required onChange={(e) => setPassword(e.target.value)} />
-              <label className="form-label" for="form2Example2">
+              <label className="form-label" htmlFor="form2Example2">
                 Password
               </label>
             </div>

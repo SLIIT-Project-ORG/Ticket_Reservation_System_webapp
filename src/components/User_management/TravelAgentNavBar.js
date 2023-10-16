@@ -12,7 +12,6 @@ export default function TravelAgentNavBar() {
            
             <button><a href="/travelerprofileedit" style={{ textDecoration: "none" }}>Traveler Account Management</a></button>
             <button><a href="/booking" style={{ textDecoration: "none" }}>Booking Management</a></button>
-           
         </div>
 
 

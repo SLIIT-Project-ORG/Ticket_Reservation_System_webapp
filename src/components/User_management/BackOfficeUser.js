@@ -16,15 +16,12 @@ const imageStyle = {
 export default function BackOffice() {
   return (
     <div style={backgroundStyle}>
-         <div className="row "><Header></Header>
-      <div><BackOfficeNavBar /></div>
+      <div className="row "><Header></Header>
+        <div><BackOfficeNavBar /></div>
         <h3 className="text-black  mt-3 b">BACK OFFICE USER PANNEL</h3>
         <div className="col-3"></div>
-           </div>
+      </div>
 
-          </div>
-        
-      
-    
+    </div>
   );
 }

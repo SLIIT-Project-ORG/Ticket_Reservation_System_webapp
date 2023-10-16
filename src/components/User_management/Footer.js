@@ -6,40 +6,40 @@ function Footer() {
     return (
        
        <div>
-              <footer id="dk-footer" class="dk-footer" >
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-md-12 col-lg-4 container8">
-                              <div class="dk-footer-box-info boxBlue p-5" style={{marginTop:"200px"}}>
-                                  <a href="index.html" class="footer-logo">
-                                      {/* <img src={Imglogo} alt="footer_logo" class="img-fluid" /> */}
+              <footer id="dk-footer" className="dk-footer" >
+                  <div className="container">
+                      <div className="row">
+                          <div className="col-md-12 col-lg-4 container8">
+                              <div className="dk-footer-box-info boxBlue p-5" style={{marginTop:"200px"}}>
+                                  <a href="index.html" className="footer-logo">
+                                      {/* <img src={Imglogo} alt="footer_logo" className="img-fluid" /> */}
                                   </a>
-                                  <div class="footer-social-link bg-light">
+                                  <div className="footer-social-link bg-light">
                                       <h3 className='text-dark'>Follow us</h3>
                                       <ul>
                                           <li>
-                                              <a href="#">
-                                                  <i class="fa fa-facebook"></i>
+                                              <a href="https://www.facebook.com">
+                                                  <i className="fa fa-facebook"></i>
                                               </a>
                                           </li>
                                           <li>
-                                              <a href="#">
-                                                  <i class="fa fa-twitter"></i>
+                                              <a href="https://www.twitter.com">
+                                                  <i className="fa fa-twitter"></i>
                                               </a>
                                           </li>
                                           <li>
-                                              <a href="#">
-                                                  <i class="fa fa-google-plus"></i>
+                                              <a href="https://googleplus.com">
+                                                  <i className="fa fa-google-plus"></i>
                                               </a>
                                           </li>
                                           <li>
-                                              <a href="#">
-                                                  <i class="fa fa-linkedin"></i>
+                                              <a href="https://www.linkedin.com">
+                                                  <i className="fa fa-linkedin"></i>
                                               </a>
                                           </li>
                                           <li>
-                                              <a href="#">
-                                                  <i class="fa fa-instagram"></i>
+                                              <a href="https://www.instagram.com">
+                                                  <i className="fa fa-instagram"></i>
                                               </a>
                                           </li>
                                       </ul>
@@ -47,67 +47,67 @@ function Footer() {
         
                               </div>
         
-                              <div class="footer-awarad" style={{marginBottom:"-10px"}}>
+                              <div className="footer-awarad" style={{marginBottom:"-10px"}}>
                                   <img src="images/icon/best.png" alt="" />
                                   <p className="pTag1" style={{marginBottom:"-10px"}}>Best Train Ticket Booking Management Site</p>
                               </div>
                           </div>
         
-                          <div class="col-md-12 col-lg-8">
+                          <div className="col-md-12 col-lg-8">
         
-                              <div class="row">
-                                  <div class="col-md-12 col-lg-6">
-                                      <div class="footer-widget footer-left-widget">
-                                          <div class="section-heading mt-3">
+                              <div className="row">
+                                  <div className="col-md-12 col-lg-6">
+                                      <div className="footer-widget footer-left-widget">
+                                          <div className="section-heading mt-3">
                                               <h3>Useful Links</h3>
-                                              <span class="animate-border border-black"></span>
+                                              <span className="animate-border border-black"></span>
                                           </div>
                                           <ul>
                                               <li>
-                                                  <a href="#">About us</a>
+                                                  <a href="/aboutus">About us</a>
                                               </li>
                                               <li>
-                                                  <a href="#">Services</a>
+                                                  <a href="/services">Services</a>
                                               </li>
                                               <li>
-                                                  <a href="#">Projects</a>
+                                                  <a href="/projects">Projects</a>
                                               </li>
                                               <li>
-                                                  <a href="#">Our Team</a>
+                                                  <a href="/ourteam">Our Team</a>
                                               </li>
                                           </ul>
                                           <ul>
                                               <li>
-                                                  <a href="#">Contact us</a>
+                                                  <a href="/contactus">Contact us</a>
                                               </li>
                                               <li>
-                                                  <a href="#">Blog</a>
+                                                  <a href="/blog">Blog</a>
                                               </li>
                                               <li>
-                                                  <a href="#">Testimonials</a>
+                                                  <a href="/testimonials">Testimonials</a>
                                               </li>
                                               <li>
-                                                  <a href="#">Faq</a>
+                                                  <a href="/faq">Faq</a>
                                               </li>
                                           </ul>
                                       </div>
         
                                   </div>
         
-                                  <div class="col-md-12 col-lg-6">
-                                      <div class="footer-widget">
-                                          <div class="section-heading mt-3">
+                                  <div className="col-md-12 col-lg-6">
+                                      <div className="footer-widget">
+                                          <div className="section-heading mt-3">
                                               <h3>Subscribe</h3>
-                                              <span class="animate-border border-black"></span>
+                                              <span className="animate-border border-black"></span>
                                           </div>
                                           <p  className="pTag">
                                               Sri Lankan number 1 Train Ticket Booking Site </p>
                                           <form action="#">
-                                              <div class="form-row">
-                                                  <div class="col dk-footer-form">
-                                                      <input type="email" class="form-control" style={{height:"40px"}} placeholder="Email Address" />
+                                              <div className="form-row">
+                                                  <div className="col dk-footer-form">
+                                                      <input type="email" className="form-control" style={{height:"40px"}} placeholder="Email Address" />
                                                       <button type="submit">
-                                                          <i style={{color:"white"}} class="fa fa-send"></i>
+                                                          <i style={{color:"white"}} className="fa fa-send"></i>
                                                       </button>
                                                   </div>
                                               </div>
@@ -127,27 +127,27 @@ function Footer() {
         
         
         
-                  <div class="copyright">
-                      <div class="container">
-                          <div class="row">
-                              <div class="col-md-6">
+                  <div className="copyright">
+                      <div className="container">
+                          <div className="row">
+                              <div className="col-md-6">
                                   <span>Copyright Â© 2019, All Right Reserved Seobin</span>
                               </div>
         
-                              <div class="col-md-6">
-                                  <div class="copyright-menu">
+                              <div className="col-md-6">
+                                  <div className="copyright-menu">
                                       <ul>
                                           <li>
-                                              <a href="#">Home</a>
+                                              <a href="/home">Home</a>
                                           </li>
                                           <li>
-                                              <a href="#">Terms</a>
+                                              <a href="/terms">Terms</a>
                                           </li>
                                           <li>
-                                              <a href="#">Privacy Policy</a>
+                                              <a href="/privacy-policy">Privacy Policy</a>
                                           </li>
                                           <li>
-                                              <a href="#">Contact</a>
+                                              <a href="/contact">Contact</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -159,9 +159,9 @@ function Footer() {
         
                   </div>
         
-                  <div id="back-to-top" class="back-to-top">
-                      <button class="btn btn-dark" title="Back to Top">
-                          <i class="fa fa-angle-up"></i>
+                  <div id="back-to-top" className="back-to-top">
+                      <button className="btn btn-dark" title="Back to Top">
+                          <i className="fa fa-angle-up"></i>
                       </button>
                   </div>
         
