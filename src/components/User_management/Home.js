@@ -23,7 +23,7 @@ export default function Home() {
         <div className="mt-4" >
             <Header />
             <div style={backgroundStyle}>
-                <NaveBar />
+               
             </div>
             <Footer />
         </div>

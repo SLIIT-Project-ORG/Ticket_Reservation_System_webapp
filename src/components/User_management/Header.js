@@ -27,8 +27,13 @@ function Header() {
                   </li>
                  
                   <li className="nav-item">
-                    <a className="nav-link" href="/">About Us</a>
+                    <a className="nav-link" href="/login">Sign in</a>
                   </li>
+
+                  <li className="nav-item">
+                    <a className="nav-link" href="/register">Sign up</a>
+                  </li>
+                  
                 </ul>
               </div>
             </div>

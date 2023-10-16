@@ -1,10 +1,11 @@
 import React from "react";
 import Header from "../User_management/Header";
 import NaveBar from "../User_management/NaveBar";
+import BackOfficeNavBar from "../User_management/BackOfficeNavBar";
 
 
 const backgroundStyle = {
-  backgroundImage: `url('https://t4.ftcdn.net/jpg/05/41/28/83/360_F_541288365_m9ZqOVrT5YAohdBhJH5bxVT2CkvfdfVR.jpg')`,
+  backgroundImage: `url('https://png.pngtree.com/thumb_back/fh260/background/20210206/pngtree-blue-green-glow-light-effect-blur-background-image_556767.jpg')`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   minHeight: '100vh', // Ensures the background covers the entire viewport height
@@ -12,6 +13,7 @@ const backgroundStyle = {
 
 const formStyle = {
   marginLeft: '1cm', // Move the form to the right by 1cm
+  
 };
 
 const columnStyle = {
@@ -23,7 +25,7 @@ export default function UpdateTrainPage() {
   return (
     <div style={backgroundStyle}>
       <div className="row "><Header></Header>
-      <div className='mt-4'><NaveBar /></div>
+      <div><BackOfficeNavBar /></div>
         <h3 className="text-black  mt-5 b">UPDATE TRAIN DETAILS</h3>
         <div className="col-3"></div>
 

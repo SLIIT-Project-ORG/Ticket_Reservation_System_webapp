@@ -11,6 +11,9 @@ import TrainPage from './components/Train_Management/Train';
 import UpdateTrainPage from './components/Train_Management/UpdateTrain';
 import UpdateProfile from './components/User_management/UpdateProfile';
 import Home from './components/User_management/Home';
+import BackOffice from './components/User_management/BackOfficeUser';
+import TravelerProfileEdit from './components/User_management/TravelerProfileEdit';
+import TravelAgent from './components/User_management/TravelAgent';
 
 function App() {
 
@@ -32,10 +35,12 @@ function App() {
         </Routes> */}
 
         <Routes>
-          <Route path="/" element={userId ? <Home/> : <Navigate to="/login"/>} />
-          <Route path="/login" element={userId ? <Navigate to="/" /> : <Login />} />
+          <Route path="/" element={userId ? <Home/> : <Navigate to="/"/>} />
+          <Route path="/" element={userId ? <Navigate to="/login" /> : <Login />} />
           <Route path="/register" element={userId ? <Register /> : <Navigate to="/register" />} />
-          
+          <Route path='/backoffice' element={<BackOffice />}></Route>
+          <Route path='/travelerprofileedit' element={<TravelerProfileEdit />}></Route>
+          <Route path='/travelagent' element={<TravelAgent />}></Route>
           <Route path="/travelerprofile" element={userId ? <TravelerProfile /> : <Navigate to="/login" />} />
           <Route path="/train" element={userId ? <TrainPage /> : <Navigate to="/login" />} />
           <Route path="/updatetrain" element={userId ? <UpdateTrainPage /> : <Navigate to="/login" />} />
